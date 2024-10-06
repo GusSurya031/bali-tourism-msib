@@ -1,12 +1,1230 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!-- Meta Tag -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- title -->
     <title>Bali Tuorism</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- CDN Tailwind -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#F5F6EE",
+              secondary: "#175212",
+              tertiary: "#F0A400",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      * {
+        scroll-behavior: smooth;
+      }
+
+      .hover-card:hover {
+        flex-grow: 1;
+      }
+    </style>
   </head>
-  <body>
-    <header></header>
+  <body class="font-['Prompt'] bg-primary">
+    <!-- Start Header -->
+    <header class="top-0 fixed w-full z-20 shadow bg-primary">
+      <nav
+        class="max-w-[1536px] mx-auto flex justify-between items-center py-2 px-6 md:px-10 lg:px-20 gap-2 font-light relative"
+      >
+        <!-- Logo -->
+        <figure class="flex flex-none items-center">
+          <img
+            src="./src/img/bali-tourism-logo.webp"
+            alt="bali-tourism-logo"
+            class="w-20"
+          />
+          <figcaption
+            class="font-['Noto_Serif'] font-bold leading-none text-2xl text-secondary"
+          >
+            Bali <br />Tourism
+          </figcaption>
+        </figure>
+        <!-- Desktop Menu Navigasi -->
+        <ul class="hidden lg:flex grow justify-center lg:gap-20">
+          <li>
+            <a href="#home" class="text-secondary font-semibold">Home</a>
+          </li>
+          <li>
+            <a
+              href="#destination"
+              class="hover:text-secondary hover:font-semibold"
+              >Destination</a
+            >
+          </li>
+          <li>
+            <a href="#benefits" class="hover:text-secondary hover:font-semibold"
+              >Benefit</a
+            >
+          </li>
+          <li>
+            <a href="#contents" class="hover:text-secondary hover:font-semibold"
+              >Content</a
+            >
+          </li>
+          <li>
+            <a
+              href="#galleries"
+              class="hover:text-secondary hover:font-semibold"
+              >Gallery</a
+            >
+          </li>
+        </ul>
+        <!-- CTA Button -->
+        <div class="hidden lg:block flex-none">
+          <button
+            class="flex items-center text-primary bg-secondary px-5 py-3 rounded-lg gap-2 font-semibold fill-primary hover:fill-secondary hover:text-secondary border-transparent transition hover:border hover:border-secondary hover:bg-primary"
+            onclick="document.location='#home'"
+          >
+            Book Now
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+              >
+                <path
+                  d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+        <!-- Mobile Menu Navigasi -->
+        <div id="menuButton" class="lg:hidden">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            width="32"
+            height="32"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+            />
+          </svg>
+        </div>
+      </nav>
+      <!-- List Menu Mobile Navigasi -->
+      <div
+        id="listNavigation"
+        class="hidden absolute bg-primary w-full transition transform -translate-y-1 pb-6"
+      >
+        <ul class="flex flex-col text-center justify-center items-center">
+          <li class="py-2">
+            <a href="#home" class="text-secondary font-semibold">Home</a>
+          </li>
+          <li class="py-2">
+            <a
+              href="#destination"
+              class="hover:text-secondary hover:font-semibold"
+              >Destination</a
+            >
+          </li>
+          <li class="py-2">
+            <a href="#benefits" class="hover:text-secondary hover:font-semibold"
+              >Benefit</a
+            >
+          </li>
+          <li class="py-2">
+            <a href="#contents" class="hover:text-secondary hover:font-semibold"
+              >Content</a
+            >
+          </li>
+          <li class="py-2">
+            <a
+              href="#galleries"
+              class="hover:text-secondary hover:font-semibold"
+              >Gallery</a
+            >
+          </li>
+          <div class="">
+            <button
+              class="flex items-center text-primary bg-secondary px-5 py-3 rounded-lg gap-2 font-semibold fill-primary hover:fill-secondary hover:text-secondary border-transparent transition hover:border hover:border-secondary hover:bg-primary"
+              onclick="document.location='#home'"
+            >
+              Book Now
+              <span>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="24px"
+                  viewBox="0 -960 960 960"
+                  width="24px"
+                >
+                  <path
+                    d="M647-440H160v-80h487L423-744l57-56 320 320-320 320-57-56 224-224Z"
+                  />
+                </svg>
+              </span>
+            </button>
+          </div>
+        </ul>
+      </div>
+    </header>
+    <!-- End Header -->
+
+    <!-- Start Main -->
+    <main class="max-w-[1536px] mx-auto">
+      <!-- Hero Section -->
+      <section
+        id="home"
+        class="px-6 md:px-10 lg:px-20 mt-28 lg:mt-32 grid grid-cols-1 md:grid-cols-2 items-center scroll-mt-28 gap-8"
+      >
+        <div
+          class="flex gap-4 flex-col justify-center items-center md:items-start md:justify-start text-center md:text-left"
+        >
+          <h1
+            class="font-['Noto_Serif'] font-bold text-3xl md:text-4xl lg:text-5xl leading-tight"
+          >
+            Visit The
+            <span class="text-secondary relative">
+              Most Beautiful
+              <span>
+                <svg
+                  width="374"
+                  height="29"
+                  viewBox="0 0 374 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="absolute -z-10 right-0 w-64 lg:left-0 lg:w-full"
+                >
+                  <path
+                    d="M4.00009 24.7549C141.578 0.804611 227.805 -5.49377 369.637 25.2722"
+                    stroke="#F0A400"
+                    stroke-width="7.17574"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+            </span>
+            Places in Bali Island
+          </h1>
+          <p class="md:text-justify leading-normal text-lg font-light">
+            Your one-stop guide to exploring Bali's many destinations, unique
+            experiences, and interesting content. Find everything you need to
+            know to make your Bali vacation unforgettable!
+          </p>
+          <button
+            class="max-w-fit flex items-center text-primary bg-tertiary px-8 py-2 rounded-full gap-2 font-semibold fill-primary hover:fill-tertiary hover:text-tertiary border-transparent transition hover:border hover:border-tertiary hover:bg-primary hover:shadow-md animate-bounce"
+            onclick="document.location='#destination'"
+          >
+            More Info
+            <span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+              >
+                <path
+                  d="M480-200 240-440l56-56 184 183 184-183 56 56-240 240Zm0-240L240-680l56-56 184 183 184-183 56 56-240 240Z"
+                />
+              </svg>
+            </span>
+          </button>
+        </div>
+        <div class="place-self-center lg:place-self-end">
+          <img
+            src="./src/img/hero-img.png"
+            alt="destinations-in-bali"
+            class="w-full"
+          />
+        </div>
+      </section>
+
+      <!-- Section 2 | Referensi Destinasi -->
+      <section
+        id="destination"
+        class="px-6 md:px-10 lg:px-20 mt-12 md:mt-14 lg:mt-16 items-center scroll-mt-28"
+      >
+        <div>
+          <h2
+            class="font-['Noto_Serif'] font-bold text-3xl text-center leading-tight"
+          >
+            References
+            <span class="text-secondary relative">
+              Destination
+              <span>
+                <svg
+                  width="200"
+                  height="29"
+                  viewBox="0 0 374 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="absolute -z-10 left-0 top-8"
+                >
+                  <path
+                    d="M4.00009 24.7549C141.578 0.804611 227.805 -5.49377 369.637 25.2722"
+                    stroke="#F0A400"
+                    stroke-width="7.17574"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+            </span>
+          </h2>
+        </div>
+        <!-- untuk desktop -->
+        <div class="hidden lg:block">
+          <div class="flex justify-center gap-8 p-10">
+            <!-- Card 1 -->
+            <div
+              class="hover-card transition-all relative w-32 h-96 overflow-hidden rounded-full lg:hover:rounded-3xl"
+            >
+              <img
+                src="./src/img/melukat.png"
+                alt="tirta-empul-pictures"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-black/100 to-black/0 bg-opacity-70 text-primary opacity-0 hover:opacity-100 flex flex-col justify-end transition-opacity duration-300 rounded-xl p-8"
+              >
+                <h2 class="text-3xl font-bold font-['Noto_Serif']">Melukat</h2>
+                <p
+                  class="mt-2 px-6 py-1 border border-primary w-fit rounded-full font-semibold"
+                >
+                  Location: Tirta Empul
+                </p>
+                <p
+                  class="mt-2 text-sm max-w-[400px] leading-normal text-justify"
+                >
+                  Enjoy a profound spiritual experience with the Melukat
+                  ceremony, where you can experience self-purification in holy
+                  water sources such as Tirta Empul.
+                </p>
+              </div>
+            </div>
+            <!-- Card 2 -->
+            <div
+              class="hover-card transition-all relative w-32 h-96 overflow-hidden rounded-full lg:hover:rounded-3xl"
+            >
+              <img
+                src="./src/img/waterfall.png"
+                alt="gitgit-waterfall-pictures"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-black/100 to-black/0 bg-opacity-70 text-primary opacity-0 hover:opacity-100 flex flex-col justify-end transition-opacity duration-300 rounded-xl p-8"
+              >
+                <h2 class="text-3xl font-bold font-['Noto_Serif']">
+                  Waterfall
+                </h2>
+                <p
+                  class="mt-2 px-6 py-1 border border-primary w-fit rounded-full font-semibold"
+                >
+                  Location: Gitgit Waterfall
+                </p>
+                <p
+                  class="mt-2 text-sm max-w-[400px] leading-normal text-justify"
+                >
+                  Explore the natural beauty of Bali by visiting stunning
+                  waterfalls such as Tegenungan Waterfall and Gitgit Waterfall,
+                  which are surrounded by stunning tropical scenery.
+                </p>
+              </div>
+            </div>
+            <!-- Card 3 -->
+            <div
+              class="hover-card transition-all relative w-32 h-96 overflow-hidden rounded-full lg:hover:rounded-3xl"
+            >
+              <img
+                src="./src/img/field.png"
+                alt="field-in-desa-ubud-pictures"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-black/100 to-black/0 bg-opacity-70 text-primary opacity-0 hover:opacity-100 flex flex-col justify-end transition-opacity duration-300 rounded-xl p-8"
+              >
+                <h2 class="text-3xl font-bold font-['Noto_Serif']">Field</h2>
+                <p
+                  class="mt-2 px-6 py-1 border border-primary w-fit rounded-full font-semibold"
+                >
+                  Location: Ubud
+                </p>
+                <p
+                  class="mt-2 text-sm max-w-[400px] leading-normal text-justify"
+                >
+                  Experience peace in Bali's stunning countryside, such as Ubud,
+                  where you can find verdant terraced rice fields and authentic
+                  village life.
+                </p>
+              </div>
+            </div>
+            <!-- Card 4 -->
+            <div
+              class="hover-card transition-all relative w-32 h-96 overflow-hidden rounded-full lg:hover:rounded-3xl"
+            >
+              <img
+                src="./src/img/temple.png"
+                alt="ulun-danu-temple-pictures"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-black/100 to-black/0 bg-opacity-70 text-primary opacity-0 hover:opacity-100 flex flex-col justify-end transition-opacity duration-300 rounded-xl p-8"
+              >
+                <h2 class="text-3xl font-bold font-['Noto_Serif']">Temple</h2>
+                <p
+                  class="mt-2 px-6 py-1 border border-primary w-fit rounded-full font-semibold"
+                >
+                  Location: Pura Ulun Danu Batur
+                </p>
+                <p
+                  class="mt-2 text-sm max-w-[400px] leading-normal text-justify"
+                >
+                  Visit magnificent temples such as Tanah Lot Temple and Uluwatu
+                  Temple, which are not only architecturally beautiful but also
+                  rich in spiritual value.
+                </p>
+              </div>
+            </div>
+            <!-- Card 5 -->
+            <div
+              class="hover-card transition-all relative w-32 h-96 overflow-hidden rounded-full lg:hover:rounded-3xl"
+            >
+              <img
+                src="./src/img/beach.png"
+                alt="klingking-beach-picture"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-black/100 to-black/0 bg-opacity-70 text-primary opacity-0 hover:opacity-100 flex flex-col justify-end transition-opacity duration-300 rounded-xl p-8"
+              >
+                <h2 class="text-3xl font-bold font-['Noto_Serif']">Beach</h2>
+                <p
+                  class="mt-2 px-6 py-1 border border-primary w-fit rounded-full font-semibold"
+                >
+                  Location: Pantai Kelingking
+                </p>
+                <p
+                  class="mt-2 text-sm max-w-[400px] leading-normal text-justify"
+                >
+                  Bali is known for its beautiful beaches. Enjoy the white sands
+                  of Kuta Beach, or the serene atmosphere of Nusa Dua Beach.
+                </p>
+              </div>
+            </div>
+            <!-- Card 6 -->
+            <div
+              class="hover-card transition-all relative w-32 h-96 overflow-hidden rounded-full lg:hover:rounded-3xl"
+            >
+              <img
+                src="./src/img/food.png"
+                alt="foods-pictures"
+                class="w-full h-full object-cover"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-r from-black/100 to-black/0 bg-opacity-70 text-primary opacity-0 hover:opacity-100 flex flex-col justify-end transition-opacity duration-300 rounded-xl p-8"
+              >
+                <h2 class="text-3xl font-bold font-['Noto_Serif']">Foods</h2>
+                <p
+                  class="mt-2 px-6 py-1 border border-primary w-fit rounded-full font-semibold"
+                >
+                  Location: Unknown
+                </p>
+                <p
+                  class="mt-2 text-sm max-w-[400px] leading-normal text-justify"
+                >
+                  Enjoy the culinary delights of Bali, from the famous Healthy
+                  Food to a variety of traditional dishes that will pamper your
+                  tongue.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- untuk mobile dan tablet -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 lg:hidden mt-8 md:mt-12">
+          <!-- Card 1 -->
+          <div
+            class="rounded-xl relative bg-[url('./src/img/melukat.png')] bg-cover bg-center"
+          >
+            <div class="relative z-10 text-primary p-8">
+              <h2 class="text-2xl font-bold font-['Noto_Serif']">Melukat</h2>
+              <p
+                class="text-sm mt-2 px-6 py-1 border border-primary w-fit rounded-full font-semibold"
+              >
+                Location: Tirta Empul
+              </p>
+              <p class="mt-2 text-sm max-w-[400px] leading-normal text-justify">
+                Enjoy a profound spiritual experience with the Melukat ceremony,
+                where you can experience self-purification in holy water sources
+                such as Tirta Empul.
+              </p>
+            </div>
+            <div
+              class="absolute top-0 w-full h-full bg-gradient-to-r from-black/100 to-black/0 text-primary flex flex-col justify-end rounded-xl p-8"
+            ></div>
+          </div>
+          <!-- Card 2 -->
+          <div
+            class="rounded-xl relative bg-[url('./src/img/waterfall.png')] bg-cover bg-center"
+          >
+            <div class="relative z-10 text-primary p-8">
+              <h2 class="text-2xl font-bold font-['Noto_Serif']">Waterfall</h2>
+              <p
+                class="text-sm mt-2 px-6 py-1 border border-primary w-fit rounded-full font-semibold"
+              >
+                Location: Gitgit Waterfall
+              </p>
+              <p class="mt-2 text-sm max-w-[400px] leading-normal text-justify">
+                Explore the natural beauty of Bali by visiting stunning
+                waterfalls such as Tegenungan Waterfall and Gitgit Waterfall,
+                which are surrounded by stunning tropical scenery.
+              </p>
+            </div>
+            <div
+              class="absolute top-0 w-full h-full bg-gradient-to-r from-black/100 to-black/0 text-primary flex flex-col justify-end rounded-xl p-8"
+            ></div>
+          </div>
+          <!-- Card 3 -->
+          <div
+            class="rounded-xl relative bg-[url('./src/img/field.png')] bg-cover bg-center"
+          >
+            <div class="relative z-10 text-primary p-8">
+              <h2 class="text-2xl font-bold font-['Noto_Serif']">Field</h2>
+              <p
+                class="text-sm mt-2 px-6 py-1 border border-primary w-fit rounded-full font-semibold"
+              >
+                Location: Ubud
+              </p>
+              <p class="mt-2 text-sm max-w-[400px] leading-normal text-justify">
+                Experience peace in Bali's stunning countryside, such as Ubud,
+                where you can find verdant terraced rice fields and authentic
+                village life.
+              </p>
+            </div>
+            <div
+              class="absolute top-0 w-full h-full bg-gradient-to-r from-black/100 to-black/0 text-primary flex flex-col justify-end rounded-xl p-8"
+            ></div>
+          </div>
+          <!-- Card 4 -->
+          <div
+            class="rounded-xl relative bg-[url('./src/img/temple.png')] bg-cover bg-center"
+          >
+            <div class="relative z-10 text-primary p-8">
+              <h2 class="text-2xl font-bold font-['Noto_Serif']">Temple</h2>
+              <p
+                class="text-sm mt-2 px-6 py-1 border border-primary w-fit rounded-full font-semibold"
+              >
+                Location: Pura Ulun Danu Batur
+              </p>
+              <p class="mt-2 text-sm max-w-[400px] leading-normal text-justify">
+                Visit magnificent temples such as Tanah Lot Temple and Uluwatu
+                Temple, which are not only architecturally beautiful but also
+                rich in spiritual value.
+              </p>
+            </div>
+            <div
+              class="absolute top-0 w-full h-full bg-gradient-to-r from-black/100 to-black/0 text-primary flex flex-col justify-end rounded-xl p-8"
+            ></div>
+          </div>
+          <!-- Card 5 -->
+          <div
+            class="rounded-xl relative bg-[url('./src/img/beach.png')] bg-cover bg-center"
+          >
+            <div class="relative z-10 text-primary p-8">
+              <h2 class="text-2xl font-bold font-['Noto_Serif']">Beach</h2>
+              <p
+                class="text-sm mt-2 px-6 py-1 border border-primary w-fit rounded-full font-semibold"
+              >
+                Location: Pantai Kelingking
+              </p>
+              <p class="mt-2 text-sm max-w-[400px] leading-normal text-justify">
+                Bali is known for its beautiful beaches. Enjoy the white sands
+                of Kuta Beach, or the serene atmosphere of Nusa Dua Beach.
+              </p>
+            </div>
+            <div
+              class="absolute top-0 w-full h-full bg-gradient-to-r from-black/100 to-black/0 text-primary flex flex-col justify-end rounded-xl p-8"
+            ></div>
+          </div>
+          <!-- Card 6 -->
+          <div
+            class="rounded-xl relative bg-[url('./src/img/food.png')] bg-cover bg-center"
+          >
+            <div class="relative z-10 text-primary p-8">
+              <h2 class="text-2xl font-bold font-['Noto_Serif']">Foods</h2>
+              <p
+                class="text-sm mt-2 px-6 py-1 border border-primary w-fit rounded-full font-semibold"
+              >
+                Location: Unknown
+              </p>
+              <p class="mt-2 text-sm max-w-[400px] leading-normal text-justify">
+                Enjoy the culinary delights of Bali, from the famous Healthy
+                Food to a variety of traditional dishes that will pamper your
+                tongue.
+              </p>
+            </div>
+            <div
+              class="absolute top-0 w-full h-full bg-gradient-to-r from-black/100 to-black/0 text-primary flex flex-col justify-end rounded-xl p-8"
+            ></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 3 | Benefit -->
+      <section
+        id="benefits"
+        class="px-6 py-8 md:py-12 md:px-10 lg:px-20 mt-12 md:mt-14 lg:mt-16 items-center grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 bg-secondary/5 gap-6 scroll-mt-28"
+      >
+        <div class="md:col-span-2 lg:col-span-1">
+          <h2
+            class="font-['Noto_Serif'] font-bold text-3xl text-left leading-tight"
+          >
+            Get The
+            <span class="text-secondary relative">
+              Best Experience
+              <span>
+                <svg
+                  width="200"
+                  height="29"
+                  viewBox="0 0 374 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="absolute -z-10 left-0 top-8"
+                >
+                  <path
+                    d="M4.00009 24.7549C141.578 0.804611 227.805 -5.49377 369.637 25.2722"
+                    stroke="#F0A400"
+                    stroke-width="7.17574"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+            </span>
+            With us
+          </h2>
+          <p class="text-justify">
+            You will experience a variety of experiences that will make you
+            never get bored of visiting Bali.
+          </p>
+        </div>
+        <figure class="place-self-center">
+          <img
+            src="./src/img/tebing.png"
+            alt="tebing"
+            class="w-80 rounded-2xl"
+          />
+        </figure>
+        <div class="text-justify flex flex-col gap-6">
+          <div class="border-b-2 border-secondary/20 pb-2">
+            <h3
+              class="font-['Noto_Serif'] font-semibold text-2xl text-secondary"
+            >
+              Cultural Diversity:
+            </h3>
+            <p>
+              Bali is known for its rich culture and traditions. Tourists will
+              be captivated by unique traditional ceremonies and performing arts
+              such as the Kecak and Barong dances.
+            </p>
+          </div>
+          <div class="border-b-2 border-secondary/20 pb-2">
+            <h3
+              class="font-['Noto_Serif'] font-semibold text-2xl text-secondary"
+            >
+              Warmth of the Local People:
+            </h3>
+            <p>
+              Balinese people are known for their friendliness and politeness,
+              which will make you feel welcomed and accepted.
+            </p>
+          </div>
+          <div class="">
+            <h3
+              class="font-['Noto_Serif'] font-semibold text-2xl text-secondary"
+            >
+              Amazing Natural Views:
+            </h3>
+            <p>
+              Bali's natural beauty, from mountains to beaches, provides the
+              perfect backdrop to relax and explore.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4 | Konten -->
+      <section
+        id="contents"
+        class="px-6 md:px-10 lg:px-20 mt-12 md:mt-14 lg:mt-16 items-center scroll-mt-28"
+      >
+        <div>
+          <h2 class="font-['Noto_Serif'] font-bold text-3xl leading-tight">
+            Content
+            <span class="text-secondary relative">
+              Destination
+              <span>
+                <svg
+                  width="200"
+                  height="29"
+                  viewBox="0 0 374 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="absolute -z-10 left-0 top-8"
+                >
+                  <path
+                    d="M4.00009 24.7549C141.578 0.804611 227.805 -5.49377 369.637 25.2722"
+                    stroke="#F0A400"
+                    stroke-width="7.17574"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+            </span>
+          </h2>
+        </div>
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-6 md:mt-8"
+        >
+          <!-- Artikel 1 -->
+          <article
+            class="bg-secondary/5 p-4 rounded-lg border border-secondary/20"
+          >
+            <figure class="">
+              <img
+                src="./src/img/tanah-lot.jpg"
+                alt="tanah-lot-temple-pictures"
+                class="rounded-md max-h-60 w-full object-cover"
+              />
+              <figcaption class="flex flex-col gap-2 mt-2">
+                <h5 class="text-secondary font-semibold">
+                  Made Cenik • <span class="font-light">1 Jan 2023</span>
+                </h5>
+                <!-- Title  -->
+                <div class="flex justify-between items-center">
+                  <h3
+                    class="font-['Nato_Serif'] text-2xl font-semibold leading-tight"
+                  >
+                    Reopening of Tanah Lot Temple
+                  </h3>
+                  <span class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-8 h-8"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <!-- Deskripsi -->
+                <p class="font-light text-justify">
+                  Visitors can enjoy spectacular sunset views and take photos at
+                  this famous location. Entrance fees are still charged, but the
+                  rates are unchanged.
+                </p>
+                <!-- Kategori -->
+                <div class="flex gap-[8px] mt-2">
+                  <span
+                    class="py-2 px-4 text-purple-600 bg-purple-600/20 rounded-full text-sm"
+                  >
+                    Temples
+                  </span>
+                  <span
+                    class="py-2 px-4 text-tertiary bg-tertiary/20 rounded-full text-sm"
+                  >
+                    Destination
+                  </span>
+                </div>
+              </figcaption>
+            </figure>
+          </article>
+          <!-- Artikel 2 -->
+          <article
+            class="bg-secondary/5 p-4 rounded-lg border border-secondary/20"
+          >
+            <figure class="">
+              <img
+                src="./src/img/ubud-festival.jpeg"
+                alt="ubud-fest-pictures"
+                class="rounded-md max-h-60 w-full object-cover"
+              />
+              <figcaption class="flex flex-col gap-2 mt-2">
+                <h5 class="text-secondary font-semibold">
+                  Made Cenik • <span class="font-light">1 Jan 2023</span>
+                </h5>
+                <!-- Title  -->
+                <div class="flex justify-between items-center">
+                  <h3
+                    class="font-['Nato_Serif'] text-2xl font-semibold leading-tight"
+                  >
+                    Ubud Foods Festival 2024
+                  </h3>
+                  <span class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-8 h-8"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <!-- Deskripsi -->
+                <p class="font-light text-justify">
+                  This festival celebrates the culinary richness of Bali and
+                  Indonesia, featuring a variety of delicious local dishes, as
+                  well as a variety of cooking events, culinary demonstrations
+                  and workshops.
+                </p>
+                <!-- Kategori -->
+                <div class="flex gap-[8px] mt-2">
+                  <span
+                    class="py-2 px-4 text-tertiary bg-tertiary/20 rounded-full text-sm"
+                  >
+                    Destination
+                  </span>
+                </div>
+              </figcaption>
+            </figure>
+          </article>
+          <!-- Artikel 3 -->
+          <article
+            class="bg-secondary/5 p-4 rounded-lg border border-secondary/20"
+          >
+            <figure class="">
+              <img
+                src="./src/img/canang.jpg"
+                alt="canang-culture"
+                class="rounded-md max-h-60 w-full object-cover"
+              />
+              <figcaption class="flex flex-col gap-2 mt-2">
+                <h5 class="text-secondary font-semibold">
+                  Made Cenik • <span class="font-light">1 Jan 2023</span>
+                </h5>
+                <!-- Title  -->
+                <div class="flex justify-between items-center">
+                  <h3
+                    class="font-['Nato_Serif'] text-2xl font-semibold leading-tight"
+                  >
+                    Respect Local Culture
+                  </h3>
+                  <span class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-8 h-8"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <!-- Deskripsi -->
+                <p class="font-light text-justify">
+                  When visiting temples or sacred sites, be sure to dress
+                  modestly and follow local customs. This shows respect for
+                  Balinese culture and traditions.
+                </p>
+                <!-- Kategori -->
+                <div class="flex gap-[8px] mt-2">
+                  <span
+                    class="py-2 px-4 text-purple-600 bg-purple-600/20 rounded-full text-sm"
+                  >
+                    Religion
+                  </span>
+                  <span
+                    class="py-2 px-4 text-secondary bg-secondary/20 rounded-full text-sm"
+                  >
+                    Tips
+                  </span>
+                </div>
+              </figcaption>
+            </figure>
+          </article>
+          <!-- Artikel 4 -->
+          <article
+            class="bg-secondary/5 p-4 rounded-lg border border-secondary/20"
+          >
+            <figure class="">
+              <img
+                src="./src/img/teman-bus.jpeg"
+                alt="teman-bus-pictures"
+                class="rounded-md max-h-60 w-full object-cover"
+              />
+              <figcaption class="flex flex-col gap-2 mt-2">
+                <h5 class="text-secondary font-semibold">
+                  Made Cenik • <span class="font-light">1 Jan 2023</span>
+                </h5>
+                <!-- Title  -->
+                <div class="flex justify-between items-center">
+                  <h3
+                    class="font-['Nato_Serif'] text-2xl font-semibold leading-tight"
+                  >
+                    Public Transportation in Bali
+                  </h3>
+                  <span class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-8 h-8"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <!-- Deskripsi -->
+                <p class="font-light text-justify">
+                  To avoid traffic jams, it is recommended to use public
+                  transportation such as Trans Sarbagita buses or rent a
+                  motorbike. Make sure to wear a helmet and obey traffic rules
+                  when driving.
+                </p>
+                <!-- Kategori -->
+                <div class="flex gap-[8px] mt-2">
+                  <span
+                    class="py-2 px-4 text-secondary bg-secondary/20 rounded-full text-sm"
+                  >
+                    Tips
+                  </span>
+                </div>
+              </figcaption>
+            </figure>
+          </article>
+          <!-- Artikel 5 -->
+          <article
+            class="bg-secondary/5 p-4 rounded-lg border border-secondary/20"
+          >
+            <figure class="">
+              <img
+                src="./src/img/tourist.jpg"
+                alt="party-tourist-in-a-pool"
+                class="rounded-md max-h-60 w-full object-cover"
+              />
+              <figcaption class="flex flex-col gap-2 mt-2">
+                <h5 class="text-secondary font-semibold">
+                  Made Cenik • <span class="font-light">1 Jan 2023</span>
+                </h5>
+                <!-- Title  -->
+                <div class="flex justify-between items-center">
+                  <h3
+                    class="font-['Nato_Serif'] text-2xl font-semibold leading-tight"
+                  >
+                    Introduction of New Policy for Tourists:
+                  </h3>
+                  <span class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-8 h-8"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <!-- Deskripsi -->
+                <p class="font-light text-justify">
+                  The Bali government has announced a new policy requiring all
+                  tourists to register online before entering several tourist
+                  areas.
+                </p>
+                <!-- Kategori -->
+                <div class="flex gap-[8px] mt-2">
+                  <span
+                    class="py-2 px-4 text-tertiary bg-tertiary/20 rounded-full text-sm"
+                  >
+                    Regulation
+                  </span>
+                </div>
+              </figcaption>
+            </figure>
+          </article>
+          <!-- Artikel 6 -->
+          <article
+            class="bg-secondary/5 p-4 rounded-lg border border-secondary/20"
+          >
+            <figure class="">
+              <img
+                src="./src/img/yoga.jpg"
+                alt="a-woman-doing-yoga"
+                class="rounded-md max-h-60 w-full object-cover"
+              />
+              <figcaption class="flex flex-col gap-2 mt-2">
+                <h5 class="text-secondary font-semibold">
+                  Made Cenik • <span class="font-light">1 Jan 2023</span>
+                </h5>
+                <!-- Title  -->
+                <div class="flex justify-between items-center">
+                  <h3
+                    class="font-['Nato_Serif'] text-2xl font-semibold leading-tight"
+                  >
+                    International Yoga Retreat in Ubud:
+                  </h3>
+                  <span class="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="w-8 h-8"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"
+                      />
+                    </svg>
+                  </span>
+                </div>
+                <!-- Deskripsi -->
+                <p class="font-light text-justify">
+                  Ubud will host the International Yoga Retreat from July 5-10,
+                  2024. The event will feature renowned yoga teachers and offer
+                  classes, workshops, and meditation sessions.
+                </p>
+                <!-- Kategori -->
+                <div class="flex gap-[8px] mt-2">
+                  <span
+                    class="py-2 px-4 text-tertiary bg-tertiary/20 rounded-full text-sm"
+                  >
+                    Retreat
+                  </span>
+                </div>
+              </figcaption>
+            </figure>
+          </article>
+        </div>
+      </section>
+
+      <!-- Section 5 | Galery -->
+      <section
+        id="galleries"
+        class="px-6 md:px-10 lg:px-20 mt-12 md:mt-14 lg:mt-16 items-center scroll-mt-28"
+      >
+        <div>
+          <h2
+            class="font-['Noto_Serif'] font-bold text-3xl text-center leading-tight"
+          >
+            Galleries
+            <span class="text-secondary relative">
+              Destination
+              <span>
+                <svg
+                  width="200"
+                  height="29"
+                  viewBox="0 0 374 29"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="absolute -z-10 left-0 top-8"
+                >
+                  <path
+                    d="M4.00009 24.7549C141.578 0.804611 227.805 -5.49377 369.637 25.2722"
+                    stroke="#F0A400"
+                    stroke-width="7.17574"
+                    stroke-linecap="round"
+                  />
+                </svg>
+              </span>
+            </span>
+          </h2>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-6 md:mt-8">
+          <!-- Gambar 1 -->
+          <div class="relative md:row-span-2">
+            <img
+              src="./src/img/temple.png"
+              alt="ulun-danu-temple-pictures"
+              class="object-cover w-full h-full rounded-lg"
+            />
+          </div>
+          <!-- Gambar 2 -->
+          <div class="relative">
+            <img
+              src="./src/img/barong.jpg"
+              alt="barong"
+              class="object-cover w-full h-full rounded-lg"
+            />
+          </div>
+          <!-- Gambar 3 -->
+          <div class="relative md:row-span-2">
+            <img
+              src="./src/img/campuhan.jpg"
+              alt="campuhan-destination"
+              class="object-cover w-full h-full rounded-lg"
+            />
+          </div>
+          <!-- Gambar 4 -->
+          <div class="relative md:row-span-2">
+            <img
+              src="./src/img/pecatu.jpg"
+              alt="pecatu"
+              class="object-cover w-full h-full rounded-lg"
+            />
+          </div>
+          <!-- Gambar 5 -->
+          <div class="relative md:row-span-1">
+            <img
+              src="./src/img/taman-ujung.jpg"
+              alt="taman-ujung-destination"
+              class="object-cover w-full h-full rounded-lg"
+            />
+          </div>
+          <!-- Gambar 6 -->
+          <div class="relative md:col-span-2 lg:col-span-1">
+            <img
+              src="./src/img/ubud.jpg"
+              alt="ubud"
+              class="object-cover w-full h-80 lg:h-full rounded-lg"
+            />
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- End Main -->
+
+    <!-- Strat Footer  -->
+    <footer class="mt-24">
+      <div
+        class="mx-auto max-w-[1536px] bg-secondary/5 grid lg:grid-cols-12 gap-6 justify-between py-4 px-6 md:px-10 md:py-6 lg:px-20 lg:py-12 text-secondary"
+      >
+        <div class="col-span-6 flex flex-col gap-6">
+          <figure class="flex items-center gap-2">
+            <img
+              src="./src/img/bali-tourism-logo.webp"
+              alt="logo-circle-himaif"
+              width="45px"
+            />
+            <figcaption class="uppercase text-xl font-bold font-['Nato_Serif']">
+              Bali Tourism
+            </figcaption>
+          </figure>
+          <div class="lg:w-3/4">
+            <p class="text-sm leading-normal text-justify">
+              Your one-stop guide to exploring Bali's many destinations, unique
+              experiences, and interesting content. Find everything you need to
+              know to make your Bali vacation unforgettable!
+            </p>
+          </div>
+        </div>
+        <div class="col-span-6 md:col-span-3">
+          <div>
+            <p class="text-xl font-bold">Navigasi</p>
+          </div>
+          <ul class="mt-2 font-light flex flex-col gap-1.5 text-sm">
+            <li>
+              <a href="#home" class="hover:underline hover:underline-offset-4"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#destination"
+                class="hover:underline hover:underline-offset-4"
+                >Destination</a
+              >
+            </li>
+            <li>
+              <a
+                href="#benefits"
+                class="hover:underline hover:underline-offset-4"
+                >Benefit</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contents"
+                class="hover:underline hover:underline-offset-4"
+                >Content</a
+              >
+            </li>
+            <li>
+              <a
+                href="#galleries"
+                class="hover:underline hover:underline-offset-4"
+                >Gallery</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="col-span-6 md:col-span-3">
+          <div>
+            <p class="text-xl font-bold">Send Your Interest</p>
+          </div>
+          <div class="flex items-center gap-2">
+            <input
+              type="text"
+              class="px-2 py-1.5 rounded-lg bg-secondary/5 text-secondary active:ring-secondary"
+            />
+            <div class="p-2 bg-secondary fill-primary rounded-lg">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                height="24px"
+                viewBox="0 -960 960 960"
+                width="24px"
+              >
+                <path
+                  d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- End Footer -->
+    <script src="./src/js/script.js"></script>
   </body>
 </html>
